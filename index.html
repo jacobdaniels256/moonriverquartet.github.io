@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moon River Quartet | Premium String Ensemble</title>
+    <title>Moon River Quartet | Portfolio & Booking</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,67 +15,137 @@
         <div class="nav-logo">Moon River Quartet</div>
         <nav class="nav-links">
             <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Song List</a>
-            <a href="#">Videos</a>
-            <a href="#">Weddings</a>
-            <a href="#">Concerts</a>
         </nav>
-        <a href="#" class="cta-pill">BOOKING INFO</a>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-headline">The most sought-after string quartet in Virginia</h1>
-            <a href="#" class="cta-primary">Get a quote <span class="arrow">→</span></a>
+    <section class="hero-split">
+        <div class="hero-text-block">
+            <h1 class="hero-headline">STRINGS FOR YOUR FAVORITE MEMORIES</h1>
+            <p class="intro-p">
+                Welcome to the Moon River Quartet, where we specialize in creating beautiful music for weddings and formal events. We take your personal requests and turn them into a memorable musical performance.
+            </p>
+            <p class="intro-p highlight-text">
+                We are a group of college musicians at UVA!
+            </p>
+            <div class="members-box">
+                <strong>Members:</strong> Alexander Bills (Violin), Caleb Wang (Violin), Luke Benfer (Viola), Jacob Daniels (Cello)
+            </div>
+        </div>
+        <div class="hero-image-block">
+            <div class="image-placeholder">
+                <span>Group Photo Placeholder<br>(Vertical / Square Crop)</span>
+            </div>
         </div>
     </section>
 
-    <section class="intro-section">
-        <h2>The perfect quartet for your event</h2>
-        <h3>Elevate the ambiance of your event with timeless live string music</h3>
-    </section>
-
-    <section class="value-grid">
-        <div class="grid-column">
-            <h3>Huge Song Selection</h3>
-            <p>From classical masterpieces to modern pop arrangements, our vast catalog spans multiple genres to perfectly match your taste.</p>
+    <section class="booking-section">
+        <div class="section-header">
+            <h2>Event Booking</h2>
+            <p class="section-desc">It's as easy as filling out the form below and telling us what you'd like! Please include the venue location, date, and type of music you'd like to hear.</p>
         </div>
-        <div class="grid-column">
-            <h3>Trusted Service Providers</h3>
-            <p>Years of professional performance experience and perfect five-star review scores across premier industry platforms.</p>
-        </div>
-        <div class="grid-column">
-            <h3>Lightning Fast Communication</h3>
-            <p>We pride ourselves on seamless customer service with ultra-responsive planning support from booking to the final note.</p>
+        
+        <div class="pricing-card">
+            <div class="pricing-rate">
+                <span class="label">Our Rate</span>
+                <span class="price">$600/hr</span>
+                <span class="details">for the time that we are at the venue (including playing and non-playing time)</span>
+            </div>
+            <div class="pricing-example">
+                <strong>Example:</strong> If we are at a venue from 4:30 - 6:30, that will be $1,200 total for the whole group.
+            </div>
         </div>
     </section>
 
-    <section class="media-verification">
-        <p>As featured in <a href="#" class="media-link">The Knot & WeddingWire</a> — Click here to verify!</p>
+    <section class="contact-section">
+        <h2>Contact us</h2>
+        <form class="contact-form" onsubmit="event.preventDefault();">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstname">First name *</label>
+                    <input type="text" id="firstname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last name</label>
+                    <input type="text" id="lastname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Write a message</label>
+                <textarea id="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
     </section>
 
-    <section class="secondary-action">
-        <div class="action-container">
-            <span class="partner-badge">★ OFFICIAL ENSEMBLE ★</span>
-            <a href="#" class="action-link">SEE US IN CONCERT <span class="arrow">→</span></a>
+    <section class="playlist-section">
+        <h2>Our Playlist</h2>
+        <p class="subtext">Some songs we have played in recent venues (not exhaustive):</p>
+        
+        <div class="tags-container">
+            <span class="song-tag">Merry Go Round of Life / Howl's Moving Castle</span>
+            <span class="song-tag">La La Land / Mia+Sebastian</span>
+            <span class="song-tag">Photograph</span>
+            <span class="song-tag">I'm Yours</span>
+            <span class="song-tag">Paradise</span>
+            <span class="song-tag">La vie en rose</span>
+            <span class="song-tag">Can't Help Falling in Love</span>
+            <span class="song-tag">Moon River</span>
+            <span class="song-tag">Hornpipe in D</span>
+            <span class="song-tag">Hornpipe in F</span>
+            <span class="song-tag">Canon in D</span>
+            <span class="song-tag">Trumpet Tune</span>
+            <span class="song-tag">Trumpet Voluntary</span>
+            <span class="song-tag">Minuet</span>
+            <span class="song-tag">Telemann Concerto in G</span>
+            <span class="song-tag">Rondeau</span>
+            <span class="song-tag">Jesu</span>
+            <span class="song-tag">Bourree in G</span>
+            <span class="song-tag">Vivaldi Winter (Largo)</span>
+            <span class="song-tag">Ave Maria</span>
+            <span class="song-tag">Arioso</span>
+            <span class="song-tag">Adagio for Strings</span>
+            <span class="song-tag">Schubert Serenade</span>
+            <span class="song-tag">Over the Rainbow</span>
+            <span class="song-tag">Take Me to Church</span>
+            <span class="song-tag">Viva La Vida</span>
+            <span class="song-tag">Gabriel's Oboe</span>
+            <span class="song-tag">The Scientist</span>
+            <span class="song-tag">Until I found You</span>
+            <span class="song-tag">Hallelujah</span>
+            <span class="song-tag">Perfect</span>
+        </div>
+
+        <div class="photo-grid">
+            <div class="grid-photo-placeholder"><span>Candid Photo 1</span></div>
+            <div class="grid-photo-placeholder"><span>Candid Photo 2</span></div>
+            <div class="grid-photo-placeholder"><span>Candid Photo 3</span></div>
         </div>
     </section>
 
-    <section class="testimonial-section">
-        <div class="quote-icon">“</div>
-        <blockquote class="testimonial-quote">
-            The Moon River Quartet made our wedding ceremony absolutely magical. They learned a custom arrangement for my walk down the aisle, and our guests haven't stopped talking about how incredible the performance was!
-        </blockquote>
-        <div class="testimonial-credit">
-            <strong>Sarah & Michael Robinson</strong>
-            <span>The Clifton, Charlottesville, VA</span>
+    <section class="highlights-section">
+        <h2>Performance Highlights</h2>
+        <div class="video-container">
+            <div class="video-placeholder">
+                <div class="play-icon">▶</div>
+                <h3>Telemann Viola Concerto</h3>
+                <p>Played by the Moon River Quartet</p>
+                <span class="duration">00:54</span>
+            </div>
         </div>
     </section>
 
-    <footer class="minimal-footer">
-        <p>CONTACT US: <a href="mailto:booking@moonriverquartet.com">BOOKING@MOONRIVERQUARTET.COM</a> | (555) 123-4567</p>
+    <footer class="main-footer">
+        <div class="footer-contact">
+            <p>Phone: <strong>703-304-4750</strong></p>
+            <p>Email: <a href="mailto:alexanderbills05@gmail.com"><strong>alexanderbills05@gmail.com</strong></a></p>
+        </div>
+        <div class="footer-copyright">
+            © 2036 by Moon River Quartet. All rights reserved.
+        </div>
     </footer>
 
 </body>
