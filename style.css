@@ -1,0 +1,391 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --bg-light: #ffffff;
+    --bg-gray: #f9f9f9;
+    --border-color: #e5e7eb;
+    --text-dark: #111827;
+    --text-muted: #4b5563;
+    --accent-blue: #1e40af; /* Elegant deep accent blue for primary elements */
+    --accent-hover: #1d4ed8;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+/* --- Header / Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #ffffff;
+}
+
+.nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--text-dark);
+}
+
+/* --- Hero Split Layout --- */
+.hero-split {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    min-height: calc(80vh - 100px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-text-block {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-headline {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+}
+
+.intro-p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+.highlight-text {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+.members-box {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    color: var(--text-muted);
+}
+
+.hero-image-block {
+    background-color: var(--bg-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid var(--border-color);
+}
+
+.image-placeholder {
+    width: 80%;
+    height: 80%;
+    border: 2px dashed #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+/* --- Shared Section Styling --- */
+section {
+    padding: 6rem 4rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+/* --- Event Booking & Pricing Box --- */
+.booking-section {
+    background-color: var(--bg-gray);
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    max-width: 700px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-rate {
+    margin-bottom: 1.5rem;
+}
+
+.pricing-rate .label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.pricing-rate .price {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.pricing-rate .details {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.pricing-example {
+    font-size: 0.95rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* --- Contact Form Styling --- */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: none;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input, .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-blue);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* --- Playlist / Tags Section --- */
+.playlist-section {
+    background-color: var(--bg-gray);
+}
+
+.playlist-section .subtext {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+}
+
+.song-tag {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-photo-placeholder {
+    background-color: #ffffff;
+    border: 1px dashed #cbd5e1;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* --- Performance Highlights Video Card --- */
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-placeholder {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: #ffffff;
+    padding: 5rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.play-icon {
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.video-placeholder:hover .play-icon {
+    transform: scale(1.1);
+}
+
+.video-placeholder h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.video-placeholder p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.duration {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    letter-spacing: 0.05em;
+}
+
+/* --- Footer Area --- */
+.main-footer {
+    padding: 4rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    padding-top: 2rem;
+}
+
+/* --- Responsive Formatting --- */
+@media (max-width: 768px) {
+    .navbar { padding: 1.5rem 2rem; }
+    .hero-split { grid-template-columns: 1fr; }
+    .hero-text-block { padding: 4rem 2rem; }
+    .hero-headline { font-size: 2.4rem; }
+    .hero-image-block { height: 300px; border-left: none; border-top: 1px solid var(--border-color); }
+    section { padding: 4rem 2rem; }
+    .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
+    .photo-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
