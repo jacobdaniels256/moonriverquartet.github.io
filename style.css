@@ -66,11 +66,13 @@ body {
 }
 
 .hero-headline {
-    font-size: 3.2rem;
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    margin-bottom: 2rem;
+    text-transform: uppercase;      /* Keeps the style consistent */
+    letter-spacing: 2px;            /* Adds "breathing room" between letters */
+    font-size: 2.5rem;              /* Adjust size down if it's too huge */
+    font-weight: 500;               /* Use a lighter weight (not bold/black) */
+    color: #333;                    /* Use a soft charcoal instead of harsh black */
+    line-height: 1.2;               /* Adds space between lines if it wraps */
+    margin-bottom: 20px;
 }
 
 .intro-p {
