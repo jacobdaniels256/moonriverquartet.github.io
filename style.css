@@ -447,6 +447,14 @@ section h2 {
     text-align: center;       /* Centers the h2 and p tags */
     padding: 60px 20px;       /* Adds breathing room */
 }
+.section-header {
+    max-width: 600px;   /* Constrains the width so it doesn't span the whole screen */
+    margin: 0 auto 30px auto; /* Centers the div itself */
+}
+
+.section-desc {
+    text-align: center; /* Ensures the paragraph specifically follows the center rule */
+}
 
 .pricing-card {
     display: inline-block;    /* Allows the card to be centered like text */
@@ -455,3 +463,5 @@ section h2 {
     max-width: 500px;         /* Prevents the card from getting too wide */
     width: 90%;               /* Ensures it looks good on mobile */
 }
+
+
