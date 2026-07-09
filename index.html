@@ -57,28 +57,32 @@
     </section>
 
     <section class="contact-section">
-        <h2>Contact us</h2>
-        <form class="contact-form" onsubmit="event.preventDefault();">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstname">First name *</label>
-                    <input type="text" id="firstname" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastname">Last name</label>
-                    <input type="text" id="lastname">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Write a message</label>
-                <textarea id="message" rows="5"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+      <!-- Replace the action URL with the one Formspree gives you -->
+<form class="contact-form" action="https://formspree.io/f/xqevvqnn" method="POST">
+    
+    <div class="form-row">
+        <div class="form-group">
+            <label for="firstname">First name *</label>
+            <input type="text" id="firstname" name="firstname" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last name</label>
+            <input type="text" id="lastname" name="lastname">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Write a message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
     </section>
 
     <section class="playlist-section">
