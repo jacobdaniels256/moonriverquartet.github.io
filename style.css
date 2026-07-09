@@ -106,10 +106,10 @@ body {
 }
 
 .hero-img {
-    width: 100%;
-    height: auto;
-    display: block;                /* Removes the tiny gap often found under images */
-    border-radius: 8px;            /* Optional: keeps your corners nice */
+    width: 100%;       /* Keeps the image as wide as the container */
+    height: auto;      /* This is the key: it tells the image to scale its height automatically to maintain its original proportions */
+    display: block;    /* Removes the default gap beneath the image */
+    object-fit: contain; /* Ensures the entire image is visible without being cut off */
 }
 
 .image-placeholder {
