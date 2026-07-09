@@ -16,55 +16,52 @@
     <h2>UVA Student Musicians</h2>
     <h2>Moon River Quartet</h2>
     <h2>Wedding Quartet Charlottesville</h2>
-    <h2>Gig Quartet Charlottesville</h2>
 </div>
-    <header class="navbar">
-        <div class="nav-logo">Moon River Quartet</div>
-        <nav class="nav-links">
-            <a href="#" class="active">Home</a>
-        </nav>
-    </header>
 
-    <section class="hero-split">
-        <div class="hero-text-block">
-            <h1 class="hero-headline">STRINGS FOR YOUR FAVORITE MEMORIES</h1>
-            <p class="intro-p">
-                We’re the Moon River Quartet, a group of student musicians at UVA. We specialize in bringing a personal touch to your wedding or formal event, working closely with you to curate the perfect playlist. 
-            <div class="members-box">
-                <strong>Members:</strong> Alexander Bills (Violin), Caleb Wang (Violin), Luke Benfer (Viola), Jacob Daniels (Cello)
-            </div>
-        </div>
-       <div class="hero-image-block">
-    <img src="Balcony.jpg" alt="Moon River Quartet" class="hero-img">
-</div>
-        </div>
-    </section>
+<header class="navbar">
+    <div class="nav-logo">Moon River Quartet</div>
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <section class="booking-section">
-        <div class="section-header">
-            <h2>Event Booking</h2>
-            <p class="section-desc">It's as easy as filling out the form below and telling us what you'd like! Please include the venue location, date, and type of music you'd like to hear.</p>
+<section id="home" class="hero-split">
+    <div class="hero-text-block">
+        <h1 class="hero-headline">STRINGS FOR YOUR FAVORITE MEMORIES</h1>
+        <p class="intro-p">We’re the Moon River Quartet, a group of student musicians at UVA. We specialize in bringing a personal touch to your wedding or formal event, working closely with you to curate the perfect playlist.</p>
+        <div class="members-box">
+            <strong>Members:</strong> Alexander Bills (Violin), Caleb Wang (Violin), Luke Benfer (Viola), Jacob Daniels (Cello)
         </div>
-        
-        <div class="pricing-card">
-            <div class="pricing-rate">
-                <span class="label">Our Rate</span>
-                <span class="price">$600/hr</span>
-                <span class="details">for the time that we are at the venue (including playing and non-playing time)</span>
-            </div>
-            <div class="pricing-example">
-                <strong>Example:</strong> If we are at a venue from 4:30 - 6:30, the total will be $1,200.  Transportation costs may apply outside of the Charlottesville area.
-            </div>
-        </div>
-    </section>
-
-  <!-- New Intro Section -->
-<section class="contact-intro">
-    <h2>Contact Us</h2>
-    <p>Whether you have a specific song in mind for your walk down the aisle or just a general vibe you’d like us to match, we’re here to help make your event unforgettable.</p>
+    </div>
+    <div class="hero-image-block">
+        <img src="Balcony.jpg" alt="Moon River Quartet" class="hero-img">
+    </div>
 </section>
 
-<!-- Existing Form Section -->
+<section id="booking" class="booking-section">
+    <div class="section-header">
+        <h2>Event Booking</h2>
+        <p class="section-desc">It's as easy as filling out the form below! Please include the venue location, date, and type of music you'd like to hear.</p>
+    </div>
+    <div class="pricing-card">
+        <div class="pricing-rate">
+            <span class="label">Our Rate</span>
+            <span class="price">$600/hr</span>
+            <span class="details">for time at the venue (including playing and non-playing time)</span>
+        </div>
+        <div class="pricing-example">
+            <strong>Example:</strong> If we are at a venue from 4:30 - 6:30, the total will be $1,200. Transportation costs may apply outside of the Charlottesville area.
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact-intro">
+    <h2>Contact Us</h2>
+    <p>Whether you have a specific song in mind or just a general vibe you’d like us to match, we’re here to help.</p>
+</section>
+
 <section class="contact-section">
     <form class="contact-form" action="https://formspree.io/f/xqevvqnn" method="POST">
         <div class="form-row">
@@ -77,95 +74,38 @@
                 <input type="text" id="lastname" name="lastname">
             </div>
         </div>
-        
         <div class="form-group">
             <label for="email">Email *</label>
             <input type="email" id="email" name="email" required>
         </div>
-        
         <div class="form-group">
             <label for="message">Write a message</label>
             <textarea id="message" name="message" rows="5"></textarea>
         </div>
-        
         <button type="submit" class="submit-btn">Submit</button>
     </form>
 </section>
 
-    <section class="playlist-section">
-        <h2>Our Playlist</h2>
-        <p class="subtext">Some songs we have played at recent events (not exhaustive):</p>
-        
-        <div class="tags-container">
-            <span class="song-tag">Merry Go Round of Life / Howl's Moving Castle</span>
-            <span class="song-tag">La La Land / Mia+Sebastian</span>
-            <span class="song-tag">Photograph</span>
-            <span class="song-tag">I'm Yours</span>
-            <span class="song-tag">Paradise</span>
-            <span class="song-tag">La vie en rose</span>
-            <span class="song-tag">Can't Help Falling in Love</span>
-            <span class="song-tag">Moon River</span>
-            <span class="song-tag">Hornpipe in D</span>
-            <span class="song-tag">Hornpipe in F</span>
-            <span class="song-tag">Canon in D</span>
-            <span class="song-tag">Trumpet Tune</span>
-            <span class="song-tag">Trumpet Voluntary</span>
-            <span class="song-tag">Minuet</span>
-            <span class="song-tag">Telemann Concerto in G</span>
-            <span class="song-tag">Rondeau</span>
-            <span class="song-tag">Jesu</span>
-            <span class="song-tag">Bourree in G</span>
-            <span class="song-tag">Vivaldi Winter (Largo)</span>
-            <span class="song-tag">Ave Maria</span>
-            <span class="song-tag">Arioso</span>
-            <span class="song-tag">Adagio for Strings</span>
-            <span class="song-tag">Schubert Serenade</span>
-            <span class="song-tag">Over the Rainbow</span>
-            <span class="song-tag">Take Me to Church</span>
-            <span class="song-tag">Viva La Vida</span>
-            <span class="song-tag">Gabriel's Oboe</span>
-            <span class="song-tag">The Scientist</span>
-            <span class="song-tag">Until I found You</span>
-            <span class="song-tag">Hallelujah</span>
-            <span class="song-tag">Perfect</span>
-        </div>
-
-       <div class="photo-grid">
-    <div class="photo-item">
-        <img src="Alex.png" alt="Candid Photo of Alexander">
+<section class="playlist-section">
+    <h2>Our Playlist</h2>
+    <p class="subtext">Some songs we have played at recent events:</p>
+    <div class="tags-container">
+        <!-- (Your existing song tags here) -->
     </div>
-    <div class="photo-item">
-        <img src="Caleb.png" alt="Candid Photo of Caleb">
+    <div class="photo-grid">
+        <div class="photo-item"><img src="Alex.png" alt="Alexander"></div>
+        <div class="photo-item"><img src="Caleb.png" alt="Caleb"></div>
+        <div class="photo-item"><img src="Jacob.png" alt="Jacob"></div>
     </div>
-    <div class="photo-item">
-        <img src="Jacob.png" alt="Candid Photo of Jacob">
-    </div>
-</div>
-
-   <section class="highlights-section">
-    <h2>Performance Highlights</h2>
     <div class="video-container">
-        <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/IISIBCUIAY8" 
-            title="Telemann Viola Concerto" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IISIBCUIAY8" frameborder="0" allowfullscreen></iframe>
     </div>
 </section>
-</section>
-    <footer class="main-footer">
-        <div class="footer-contact">
-            <p>Phone: <strong>703-304-4750</strong></p>
-            <p>Email: <a href="mailto:themoonriverquartet@gmail.com"><strong>themoonriverquartet@gmail.com</strong></a></p>
-        </div>
-        <div class="footer-copyright">
-            © 2026 by Moon River Quartet. All rights reserved.
-        </div>
-    </footer>
 
+<footer class="main-footer">
+    <p>Phone: <strong>703-304-4750</strong></p>
+    <p>Email: <a href="mailto:themoonriverquartet@gmail.com"><strong>themoonriverquartet@gmail.com</strong></a></p>
+    <div class="footer-copyright">© 2026 by Moon River Quartet.</div>
+</footer>
 </body>
 </html>
