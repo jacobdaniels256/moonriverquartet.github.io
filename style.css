@@ -138,16 +138,26 @@ section h2 {
     margin-bottom: 2rem;
 }
 
-/* --- Event Booking & Pricing Box --- */
+
+/* Update your booking section to override the global section settings */
 .booking-section {
     background-color: var(--bg-gray);
+    text-align: center; 
+    padding: 6rem 4rem; /* Matching your global section padding */
+    border-bottom: 1px solid var(--border-color);
 }
 
-.section-desc {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin-bottom: 2.5rem;
+/* This targets the header specifically to ensure it behaves */
+.booking-section .section-header {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    text-align: center; /* Forces the text inside this div to center */
+}
+
+/* This ensures the paragraph inside follows the center rule */
+.booking-section .section-desc {
+    text-align: center;
+    margin: 0 auto; /* Centers the block if it has a max-width */
 }
 
 .pricing-card {
@@ -450,25 +460,5 @@ section h2 {
     margin: 20px auto;        /* Centers the card block horizontally */
     max-width: 500px;         /* Prevents the card from getting too wide */
     width: 90%;               /* Ensures it looks good on mobile */
-}
-/* Update your booking section to override the global section settings */
-.booking-section {
-    background-color: var(--bg-gray);
-    text-align: center; 
-    padding: 6rem 4rem; /* Matching your global section padding */
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* This targets the header specifically to ensure it behaves */
-.booking-section .section-header {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    text-align: center; /* Forces the text inside this div to center */
-}
-
-/* This ensures the paragraph inside follows the center rule */
-.booking-section .section-desc {
-    text-align: center;
-    margin: 0 auto; /* Centers the block if it has a max-width */
 }
 
