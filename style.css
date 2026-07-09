@@ -98,11 +98,18 @@ body {
 }
 
 .hero-image-block {
-    background-color: var(--bg-gray);
+    background-color: transparent; /* Removes the gray */
+    padding: 0;                    /* Removes any potential space around the image */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-left: 1px solid var(--border-color);
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;                /* Removes the tiny gap often found under images */
+    border-radius: 8px;            /* Optional: keeps your corners nice */
 }
 
 .image-placeholder {
@@ -391,11 +398,7 @@ section h2 {
     .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
     .photo-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This crops the image neatly to fill the space perfectly */
-}
+
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
