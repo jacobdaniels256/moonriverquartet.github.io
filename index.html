@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- SEO-only headings: visually hidden, readable by search engines -->
 <div class="seo-hidden-headings">
     <h1>String Quartet Charlottesville</h1>
     <h2>Live Music for Events in Virginia</h2>
@@ -22,24 +24,50 @@
     <div class="nav-logo">Moon River Quartet</div>
     <nav class="nav-links">
         <a href="#home">Home</a>
+        <a href="#highlights">Highlights</a>
         <a href="#booking">Booking</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
+<!-- 1. HERO -->
 <section id="home" class="hero-split">
     <div class="hero-text-block">
         <h1 class="hero-headline">STRINGS FOR YOUR FAVORITE MEMORIES</h1>
-        <p class="intro-p">We’re the Moon River Quartet, a group of student musicians at UVA. We specialize in bringing a personal touch to your wedding or formal event, working closely with you to curate the perfect playlist.</p>
+        <p class="intro-p">We're the Moon River Quartet, a group of student musicians at UVA. We specialize in bringing a personal touch to your wedding or formal event, working closely with you to curate the perfect playlist.</p>
         <div class="members-box">
             <strong>Members:</strong> Alexander Bills (Violin), Caleb Wang (Violin), Luke Benfer (Viola), Jacob Daniels (Cello)
         </div>
     </div>
     <div class="hero-image-block">
-        <img src="Balcony.jpg" alt="Moon River Quartet" class="hero-img">
+        <img src="Balcony.jpg" alt="Moon River Quartet performing on a balcony" class="hero-img">
     </div>
 </section>
 
+<!-- 2. PERFORMANCE HIGHLIGHTS (moved above booking & contact) -->
+<section id="highlights" class="playlist-section">
+    <h2>Performance Highlights</h2>
+    <p class="subtext">Some songs we have played at recent events:</p>
+    <div class="tags-container">
+        <!-- Add .song-tag spans here as needed -->
+    </div>
+    <div class="photo-grid">
+        <div class="photo-item"><img src="Alex.png" alt="Alexander Bills, Violin"></div>
+        <div class="photo-item"><img src="Caleb.png" alt="Caleb Wang, Violin"></div>
+        <div class="photo-item"><img src="Jacob.png" alt="Jacob Daniels, Cello"></div>
+    </div>
+    <div class="video-container">
+        <iframe
+            src="https://www.youtube.com/embed/IISIBCUIAY8"
+            title="Moon River Quartet performance video"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<!-- 3. EVENT BOOKING (now below highlights) -->
 <section id="booking" class="booking-section">
     <div class="section-header">
         <h2>Event Booking</h2>
@@ -52,14 +80,15 @@
             <span class="details">for time at the venue (including playing and non-playing time)</span>
         </div>
         <div class="pricing-example">
-            <strong>Example:</strong> If we are at a venue from 4:30 - 6:30, the total will be $1,200. Transportation costs may apply outside of the Charlottesville area.
+            <strong>Example:</strong> If we are at a venue from 4:30 – 6:30, the total will be $1,200. Transportation costs may apply outside of the Charlottesville area.
         </div>
     </div>
 </section>
 
+<!-- 4. CONTACT (now below booking) -->
 <section id="contact" class="contact-intro">
     <h2>Contact Us</h2>
-    <p>Whether you have a specific song in mind or just a general vibe you’d like us to match, we’re here to help.</p>
+    <p>Whether you have a specific song in mind or just a general vibe you'd like us to match, we're here to help.</p>
 </section>
 
 <section class="contact-section">
@@ -67,16 +96,16 @@
         <div class="form-row">
             <div class="form-group">
                 <label for="firstname">First name *</label>
-                <input type="text" id="firstname" name="firstname" required>
+                <input type="text" id="firstname" name="firstname" required autocomplete="given-name">
             </div>
             <div class="form-group">
                 <label for="lastname">Last name</label>
-                <input type="text" id="lastname" name="lastname">
+                <input type="text" id="lastname" name="lastname" autocomplete="family-name">
             </div>
         </div>
         <div class="form-group">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required autocomplete="email">
         </div>
         <div class="form-group">
             <label for="message">Write a message</label>
@@ -86,26 +115,12 @@
     </form>
 </section>
 
-<section class="playlist-section">
-    <h2>Our Playlist</h2>
-    <p class="subtext">Some songs we have played at recent events:</p>
-    <div class="tags-container">
-        <!-- (Your existing song tags here) -->
-    </div>
-    <div class="photo-grid">
-        <div class="photo-item"><img src="Alex.png" alt="Alexander"></div>
-        <div class="photo-item"><img src="Caleb.png" alt="Caleb"></div>
-        <div class="photo-item"><img src="Jacob.png" alt="Jacob"></div>
-    </div>
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/IISIBCUIAY8" frameborder="0" allowfullscreen></iframe>
-    </div>
-</section>
-
 <footer class="main-footer">
     <p>Phone: <strong>703-304-4750</strong></p>
     <p>Email: <a href="mailto:themoonriverquartet@gmail.com"><strong>themoonriverquartet@gmail.com</strong></a></p>
     <div class="footer-copyright">© 2026 by Moon River Quartet.</div>
 </footer>
+
 </body>
 </html>
+```
