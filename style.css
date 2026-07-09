@@ -443,3 +443,15 @@ section h2 {
     line-height: 1.6;
     color: #444;
 }
+.booking-section {
+    text-align: center;       /* Centers the h2 and p tags */
+    padding: 60px 20px;       /* Adds breathing room */
+}
+
+.pricing-card {
+    display: inline-block;    /* Allows the card to be centered like text */
+    text-align: left;         /* Keeps the text inside the card readable */
+    margin: 20px auto;        /* Centers the card block horizontally */
+    max-width: 500px;         /* Prevents the card from getting too wide */
+    width: 90%;               /* Ensures it looks good on mobile */
+}
