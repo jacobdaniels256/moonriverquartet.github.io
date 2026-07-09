@@ -408,3 +408,15 @@ section h2 {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Keeps the video proportional */
+    border-radius: 12px;
+}
