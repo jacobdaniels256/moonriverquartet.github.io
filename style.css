@@ -1,4 +1,6 @@
-/* --- Global Reset & Variables --- */
+/* ============================================================
+   Global Reset & Variables
+   ============================================================ */
 :root {
     --bg-light: #ffffff;
     --bg-gray: #f9f9f9;
@@ -11,10 +13,19 @@
     --font-sans: 'Inter', sans-serif;
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* FIX: Prevent horizontal scrolling caused by overflowing children */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -24,7 +35,31 @@ body {
     line-height: 1.6;
 }
 
-/* --- Header / Navigation Bar --- */
+/* ============================================================
+   FIX 1: SEO Hidden Headings
+   Uses the modern "visually-hidden" / sr-only pattern.
+   - `clip` alone is outdated; `clip-path: inset(50%)` is the
+     current standard for hiding from visual rendering while
+     remaining in the accessibility/SEO tree.
+   - `white-space: nowrap` prevents the 1Ã—1 px box from
+     expanding if text wraps.
+   ============================================================ */
+.seo-hidden-headings {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);        /* legacy browsers */
+    clip-path: inset(50%);          /* modern standard  */
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================================
+   Header / Navigation Bar
+   ============================================================ */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -32,6 +67,9 @@ body {
     padding: 2rem 4rem;
     border-bottom: 1px solid var(--border-color);
     background-color: #ffffff;
+    /* Prevent the navbar itself from overflowing */
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .nav-logo {
@@ -41,6 +79,12 @@ body {
     letter-spacing: -0.02em;
 }
 
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
 .nav-links a {
     color: var(--text-dark);
     text-decoration: none;
@@ -48,9 +92,15 @@ body {
     font-weight: 500;
     padding-bottom: 4px;
     border-bottom: 2px solid var(--text-dark);
+    /* iPhone: ensure tap target meets 44px minimum */
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
 }
 
-/* --- Hero Split Layout --- */
+/* ============================================================
+   Hero Split Layout
+   ============================================================ */
 .hero-split {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -96,16 +146,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* FIX: contain the image so it never overflows its column */
+    overflow: hidden;
+    min-width: 0;
 }
 
 .hero-img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
 }
 
-/* --- Shared Section Styling --- */
+/* ============================================================
+   Shared Section Styling
+   ============================================================ */
 section {
     padding: 6rem 4rem;
     border-bottom: 1px solid var(--border-color);
@@ -118,145 +174,9 @@ section h2 {
     margin-bottom: 2rem;
 }
 
-/* --- Event Booking & Pricing Box --- */
-.booking-section {
-    background-color: var(--bg-gray);
-    text-align: center;
-    padding: 6rem 4rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.section-header {
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-}
-
-.section-desc {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin: 0 auto;
-}
-
-.pricing-card {
-    background: #ffffff;
-    border: 1px solid var(--border-color);
-    padding: 2.5rem;
-    max-width: 700px;
-    margin: 20px auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    display: inline-block;
-    text-align: left;
-}
-
-.pricing-rate {
-    margin-bottom: 1.5rem;
-}
-
-.pricing-rate .label {
-    display: block;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-.pricing-rate .price {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--accent-blue);
-    display: inline-block;
-    margin-right: 0.5rem;
-}
-
-.pricing-rate .details {
-    font-size: 1rem;
-    color: var(--text-dark);
-}
-
-.pricing-example {
-    font-size: 0.95rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
-}
-
-/* --- Contact Section --- */
-.contact-intro {
-    text-align: center;
-    padding: 60px 20px 20px 20px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.contact-intro h2 {
-    font-family: var(--font-serif);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.contact-intro p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-}
-
-.contact-section {
-    max-width: 800px;
-    margin: 0 auto;
-    border-bottom: 1px solid var(--border-color);
-    padding: 2rem 4rem 6rem;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.form-group input, .form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    outline: none;
-}
-
-.submit-btn {
-    align-self: flex-start;
-    background-color: var(--accent-blue);
-    color: #ffffff;
-    padding: 0.75rem 2.5rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* --- Playlist & Media --- */
+/* ============================================================
+   Performance Highlights (Playlist & Media)
+   ============================================================ */
 .playlist-section {
     background-color: var(--bg-gray);
     padding: 6rem 4rem;
@@ -296,7 +216,7 @@ section h2 {
     height: 300px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .video-container {
@@ -306,17 +226,202 @@ section h2 {
     margin: 0 auto;
 }
 
+/* FIX: Remove hardcoded width/height attributes from iframe in HTML;
+   rely entirely on CSS aspect-ratio so it never overflows on mobile. */
 .video-container iframe {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     border-radius: 12px;
+    display: block;
 }
 
-/* --- Footer --- */
+/* ============================================================
+   Event Booking & Pricing Box
+   ============================================================ */
+.booking-section {
+    background-color: var(--bg-gray);
+    text-align: center;
+    padding: 6rem 4rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0 auto;
+}
+
+/* FIX: Changed from `display: inline-block` to `display: block`.
+   inline-block can cause the parent container to stretch wider
+   than the viewport on narrow screens, triggering horizontal scroll. */
+.pricing-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    max-width: 700px;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: block;
+    text-align: left;
+}
+
+.pricing-rate {
+    margin-bottom: 1.5rem;
+}
+
+.pricing-rate .label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.pricing-rate .price {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    display: inline-block;
+    margin-right: 0.5rem;
+    /* Prevent long price string from overflowing on very small screens */
+    word-break: break-word;
+}
+
+.pricing-rate .details {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.pricing-example {
+    font-size: 0.95rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   Contact Section
+   ============================================================ */
+.contact-intro {
+    text-align: center;
+    padding: 60px 2rem 20px 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    /* Override the general section border so there's no double line
+       between the intro text and the form below it */
+    border-bottom: none;
+}
+
+.contact-intro h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 4rem 6rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* FIX: Ensure form groups never overflow their container */
+    min-width: 0;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    /* FIX: Prevents iOS Safari from applying its own rounded/shadowed style */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    background-color: var(--accent-blue);
+    color: #ffffff;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    /* iPhone: minimum touch target size */
+    min-height: 44px;
+    /* Remove the blue flash on tap in iOS Safari */
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover,
+.submit-btn:focus-visible {
+    background-color: var(--accent-hover);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
 .main-footer {
     padding: 4rem;
     background-color: #ffffff;
     text-align: center;
+}
+
+.main-footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
 }
 
 .footer-copyright {
@@ -325,37 +430,104 @@ section h2 {
     margin-top: 2rem;
 }
 
-/* --- Responsive --- */
+/* ============================================================
+   Responsive â€” Mobile (â‰¤ 768px)
+   ============================================================ */
 @media (max-width: 768px) {
-    .navbar { padding: 1.5rem 2rem; }
-    .hero-split { grid-template-columns: 1fr; }
-    .photo-grid { grid-template-columns: 1fr; }
-}
-.seo-hidden-headings {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-@media (max-width: 768px) {
-    /* Reduce padding on mobile */
-    section, .booking-section, .playlist-section { 
-        padding: 3rem 1.5rem; 
+
+    /* --- Navigation --- */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem 1.5rem;
+        gap: 0.75rem;
     }
-    
-    /* Make text scale better */
-    .hero-headline { font-size: 1.8rem !important; }
-    section h2 { font-size: 1.8rem !important; }
-    
-    /* Fix nav bar wrapping */
-    .navbar { flex-direction: column; gap: 1rem; }
-    .nav-links { display: flex; gap: 15px; }
-    
-    /* Ensure form inputs are easy to tap */
-    .form-group input, .form-group textarea { font-size: 16px; } 
-    .submit-btn { width: 100%; }
+
+    .nav-links {
+        gap: 1.25rem;
+    }
+
+    /* --- Sections: reduce horizontal padding so content
+       never pushes past the screen edge --- */
+    section,
+    .booking-section,
+    .playlist-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .contact-section {
+        padding: 1.5rem 1.5rem 4rem;
+    }
+
+    .contact-intro {
+        padding: 3rem 1.5rem 1rem;
+    }
+
+    /* --- Typography scaling --- */
+    .hero-headline {
+        font-size: 1.8rem !important;
+        letter-spacing: 1px;
+    }
+
+    section h2,
+    .contact-intro h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* --- Hero: stack vertically on mobile --- */
+    .hero-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-text-block {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-image-block {
+        /* Keep the image from being taller than necessary on mobile */
+        max-height: 60vw;
+    }
+
+    /* --- Pricing card: tighter padding on mobile --- */
+    .pricing-card {
+        padding: 1.5rem;
+    }
+
+    .pricing-rate .price {
+        font-size: 2.2rem;
+    }
+
+    /* --- Contact form:
+       - Stack name fields vertically
+       - 16px font size prevents iOS auto-zoom on focus
+       - Full-width submit button for easy tapping
+    --- */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* prevents iOS zoom on input focus */
+    }
+
+    .submit-btn {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    /* --- Photo grid: single column on small screens --- */
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-item img {
+        height: 250px;
+    }
+
+    /* --- Footer --- */
+    .main-footer {
+        padding: 3rem 1.5rem;
+    }
 }
